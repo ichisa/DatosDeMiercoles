@@ -1,4 +1,7 @@
-# DatosDeMiercoles
+# R codes
 
-Aquí voy subiendo los códigos que uso para los gráficos de Datos de Miércoles.
-Contenta de ser parte de este proyecto!
+Codes that I create just for fun using R. Subfolders:
+
+Datos de Miércoles
+
+Tidy Tuesday
