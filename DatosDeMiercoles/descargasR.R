@@ -8,16 +8,17 @@ library(ggplot2)
 library(viridis)
 library(gridExtra)
 library(grid)
+library(ggthemes)
 #basic ggplot
 
-#Pasar a día de la semana
+#Pasar a d?a de la semana
 dia.numerico <- as.POSIXlt(descargas_R$fecha)$wday + 1
 
-semana <- c("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado")
+semana <- c("Domingo", "Lunes", "Martes", "MiÃ©rcoles", "Jueves", "Viernes", "SÃ¡bado")
 
 dia <- factor(semana[dia.numerico],  levels=semana, labels = semana)
 
-#Sumar descargas por día
+#Sumar descargas por d?a
 descargas.dia <- cbind(descargas_R, dia, dia.numerico)  %>%  
   group_by(dia, dia.numerico, sistema_operativo) %>% 
   summarise(descargas = sum(descargas, na.rm = TRUE)) %>% 
@@ -29,13 +30,12 @@ my_breaks = c(400, 1000, 2500, 5000, 15000)
 #ggplot
 descargas.dia %>%  ggplot(aes(x=dia,y=sistema_operativo,fill=descargas)) + #agregar borde
   geom_tile(colour="gray",size=0.25) +
-  coord_fixed() + #Incrementar todos los tamaños de letra
- 
+  coord_fixed() + 
   theme( plot.caption = element_text(size=6))  +
   theme_wsj() +
   scale_fill_viridis(tran = "log",  option= "magma",
      breaks = my_breaks, labels = my_breaks,
-     labs(fill = "Número"),
+     labs(fill = "NÃºmero"),
      guide = guide_legend(direction = "horizontal",
         title.position = "top",
         label.position = "bottom",
