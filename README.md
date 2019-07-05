@@ -1,7 +1,6 @@
-# R codes
+# R codes for fun
 
-Codes that I create just for fun using R. Subfolders:
 
-Datos de Miércoles
+* [Datos de miércoles](https://github.com/ichisa/R/tree/master/DatosDeMiercoles) - Códigos para Datos de Miércoles
+* [Tidy Tuesday]() - Codes for TidyTuesday. Soon I will start adding code!
 
-Tidy Tuesday
